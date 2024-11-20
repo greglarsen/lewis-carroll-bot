@@ -1,0 +1,18 @@
+#!/bin/bash
+
+cd /home/larsen_online/faust-bot/
+
+if [ ! -s quelle_random.txt ]; then
+
+cat quelle.txt | shuf > quelle_random.txt
+
+fi
+
+sed -n 1p quelle_random.txt  | sed 's|\/|\n|g'  > quotes.txt
+
+
+
+cat quotes.txt > test
+sed -i '1d' quelle_random.txt
+
+/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node index.js
