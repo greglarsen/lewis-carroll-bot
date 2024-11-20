@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cd /home/larsen_online/faust-bot/
+cd /home/larsen_online/lewis-carroll-bot/
 
 if [ ! -s quelle_random.txt ]; then
 
