@@ -8,6 +8,7 @@ DATE=`date -d "today" '+%Y-%m-%d'`
 #echo $DATE
 
 SEARCHSTRINGS="cat without a grin
+Twas brillig, and the slithy toves
 O frabjous day
 "
 
