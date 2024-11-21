@@ -10,6 +10,7 @@ DATE=`date -d "today" '+%Y-%m-%d'`
 SEARCHSTRINGS="cat without a grin
 Twas brillig, and the slithy toves
 O frabjous day
+It's a poor sort of memory that only works backwards.
 "
 
 printf %s "$SEARCHSTRINGS" | 
@@ -61,7 +62,7 @@ module.exports = {
 " > /home/larsen_online/faust-bot/uri-cid
 
 
-/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/faust-bot/likeit.js
+/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/lewis-carroll-bot/likeit.js
 else
 echo "SKIPPING $THISPOSTER"
 fi
