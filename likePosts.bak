@@ -59,7 +59,7 @@ module.exports = {
   myuri: '$URI',
   mycid: '$CID'
 };
-" > /home/larsen_online/faust-bot/uri-cid
+" > /home/larsen_online/lewis-carroll-bot/uri-cid
 
 
 /home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/lewis-carroll-bot/likeit.js

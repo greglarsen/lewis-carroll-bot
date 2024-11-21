@@ -11,6 +11,7 @@ SEARCHSTRINGS="cat without a grin
 Twas brillig, and the slithy toves
 O frabjous day
 It's a poor sort of memory that only works backwards.
+It’s no use going back to yesterday, because I was a different person then
 "
 
 printf %s "$SEARCHSTRINGS" | 
