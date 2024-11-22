@@ -8,9 +8,9 @@ DATE=`date -d "today" '+%Y-%m-%d'`
 #echo $DATE
 
 SEARCHSTRINGS="cat without a grin
-Twas brillig, and the slithy toves
+brillig, and the slithy toves
 O frabjous day
-a poor sort of memory that only works backwards.
+a poor sort of memory that only works backwards
 no use going back to yesterday, because I was a different person then
 The time has come, the Walrus said
 Curiouser and curiouser, said Alice

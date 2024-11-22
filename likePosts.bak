@@ -10,9 +10,9 @@ DATE=`date -d "today" '+%Y-%m-%d'`
 SEARCHSTRINGS="cat without a grin
 Twas brillig, and the slithy toves
 O frabjous day
-It's a poor sort of memory that only works backwards.
-It’s no use going back to yesterday, because I was a different person then
-The time has come, the Walrus said,
+a poor sort of memory that only works backwards
+no use going back to yesterday, because I was a different person then
+The time has come, the Walrus said
 Curiouser and curiouser, said Alice
 Alice’s Adventures In Wonderland
 Alice's Adventures in Wonderland
