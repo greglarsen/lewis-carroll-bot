@@ -13,7 +13,8 @@ O frabjous day
 It's a poor sort of memory that only works backwards.
 It’s no use going back to yesterday, because I was a different person then
 The time has come, the Walrus said,
-Curiouser and curiouser," said Alice
+Curiouser and curiouser, said Alice
+Alice’s Adventures In Wonderland
 "
 
 printf %s "$SEARCHSTRINGS" | 
