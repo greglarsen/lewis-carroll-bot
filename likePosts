@@ -19,9 +19,12 @@ a poor sort of memory that only works backwards
 no use going back to yesterday, because I was a different person then
 The time has come, the Walrus said
 Curiouser and curiouser, said Alice
+It was the best butter
+snark was a boojum
+you are old, father william, the young man said
 Alice’s Adventures In Wonderland
 Alice's Adventures in Wonderland
-"
+lewis carroll bot"
 
 printf %s "$SEARCHSTRINGS" | 
 while IFS= read -r line; do
