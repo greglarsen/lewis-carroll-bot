@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PASSWORD=`cat ./config2`
 #echo $PASSWORD
 
@@ -7,6 +9,8 @@ TOKEN=`curl -X POST https://bsky.social/xrpc/com.atproto.server.createSession -H
 }' | sed 's|.*accessJwt":"||g' | sed 's|".*||g'`
 
 #echo $TOKEN
+
+
 
 DATE=`date -d "today" '+%Y-%m-%d'`
 
@@ -24,27 +28,29 @@ snark was a boojum
 you are old, father william, the young man said
 Alice’s Adventures In Wonderland
 Alice's Adventures in Wonderland
-lewis carroll bot"
+lewis carroll bot
+We’re all mad here
+If you don’t know where you are going, any road will get you there
+Begin at the beginning…and go on till you come to the end then stop
+sometimes I’ve believed as many as six impossible things before breakfast
+It’s a poor sort of memory that only works backward
+jam tomorrow and jam yesterday but never jam today
+Life what is it but a dream
+What I tell you three times is true
+"
 
 printf %s "$SEARCHSTRINGS" | 
 while IFS= read -r line; do
 
 
-STRING=`echo $line | sed 's| |%20|g' | sed 's|ö|%C3%B6|g' | sed 's|ä|%C3%A4|g' | sed 's|ü|%C3%BC|g' | sed 's|ß|%C3%9F|g' | sed 's|\?|%3F|g' | \
-sed "s|'|%27|g" | sed 's|\!|%21|g' | sed 's|,|%2C|g'`
-
-#echo "$STRING"
-
-
-
-POSTS=`curl -L -X GET "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=\"${STRING}\"&since=${DATE}T00:00:01.123Z" -H 'Accept: application/json' -H 'Authorization: Bearer $TOKEN' | sed "s|uri|\n|g" \
-| grep handle | awk -F [\"] '{print   $3 " "  $7 " "   $17 }'`
-
-#curl -L -X GET "https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=\"${STRING}\"&since=${DATE}T23:59:59.123Z" -H 'Accept: application/json' -H 'Authorization: Bearer $TOKEN' | sed "s|uri|\n|g" \
-#| grep handle | awk -F [\"] '{print   $3 " "  $7 " "   $17 }'
-
-
-
+POSTS=$( curl -s -G "https://faust-bot.bsky.social/xrpc/app.bsky.feed.searchposts" \
+    --data-urlencode "q=${line}" \
+    --data-urlencode "since=${DATE}T00:00:01.123Z" \
+    -H "Accept: application/json" \
+    -H "Authorization: Bearer $TOKEN"\
+ | sed "s|uri|\n|g" \
+| grep handle | awk -F [\"] '{print   $3 " "  $7 " "   $17 }'
+)
 
 if [[ "$POSTS" != "" ]]; then
 
@@ -72,10 +78,10 @@ module.exports = {
   myuri: '$URI',
   mycid: '$CID'
 };
-" > /home/larsen_online/lewis-carroll-bot/uri-cid
+" > /home/larsen_online/faust-bot/uri-cid
 
 
-/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/lewis-carroll-bot/likeit.js
+/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/faust-bot/likeit.js
 else
 echo "SKIPPING $THISPOSTER"
 fi
@@ -85,3 +91,4 @@ fi
 
 
 done
+
