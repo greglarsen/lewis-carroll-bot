@@ -4,7 +4,7 @@ PASSWORD=`cat ./config2`
 #echo $PASSWORD
 
 TOKEN=`curl -X POST https://bsky.social/xrpc/com.atproto.server.createSession -H "Content-Type: application/json" -d '{
-  "identifier": "faust-bot.bsky.social",
+  "identifier": "lewis-carroll-bot.bsky.social",
   "password": "'"$PASSWORD"'"
 }' | sed 's|.*accessJwt":"||g' | sed 's|".*||g'`
 
@@ -43,7 +43,7 @@ printf %s "$SEARCHSTRINGS" |
 while IFS= read -r line; do
 
 
-POSTS=$( curl -s -G "https://faust-bot.bsky.social/xrpc/app.bsky.feed.searchposts" \
+POSTS=$( curl -s -G "https://lewis-carroll-bot.bsky.social/xrpc/app.bsky.feed.searchposts" \
     --data-urlencode "q=${line}" \
     --data-urlencode "since=${DATE}T00:00:01.123Z" \
     -H "Accept: application/json" \
@@ -78,10 +78,10 @@ module.exports = {
   myuri: '$URI',
   mycid: '$CID'
 };
-" > /home/larsen_online/faust-bot/uri-cid
+" > /home/larsen_online/lewis-carroll-bot/uri-cid
 
 
-/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/faust-bot/likeit.js
+/home/larsen_online/.nvm/versions/node/v18.20.2/bin/node /home/larsen_online/lewis-carroll-bot/likeit.js
 else
 echo "SKIPPING $THISPOSTER"
 fi
